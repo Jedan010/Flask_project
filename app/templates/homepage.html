@@ -1,0 +1,19 @@
+
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block page_content %}
+<div class="page-header">
+	<h1> 你好，	{% if current_user.is_authenticated %}{{current_user.username}}
+	{% else %} 陌生人 
+	{% endif %}！我是吴杰德！
+	</h1> 
+	{% if not known %}<p>很高兴遇到你！</p>
+	{% else %}<p>很高兴再次遇到你！</p>
+	{% endif %}
+	<p> 您的 User-Agent 是：{{user_agent}} </p>
+	<p> 当前本地时间为： {{moment(current_time).format('LLL') }} </p>
+	<p> 这是 {{moment(current_time).fromNow(refresh=True) }} <p>
+</div>
+{{ wtf.quick_form(form)}}
+{% endblock %}

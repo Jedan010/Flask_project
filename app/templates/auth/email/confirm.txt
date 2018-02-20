@@ -1,0 +1,11 @@
+亲爱的 {{ user.username }},
+
+欢迎来到 杰德网页!
+
+请点击以下链接以验证您的身份:
+
+{{ url_for('auth.confirm', token=token, _external=True) }}
+
+杰德团队
+
+注意：回复本邮件将不会被监控

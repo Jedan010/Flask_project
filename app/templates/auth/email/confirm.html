@@ -1,0 +1,7 @@
+<p>亲爱的 {{ user.username }},</p>
+<p>欢迎来到 <b>杰德</b>!</p>
+<p>请点击以下链接以验证您的身份 <a href="{{ url_for('auth.confirm', token=token, _external=True) }}"></a>.</p>
+<p>Alternatively, you can paste the following link in your browser's address bar:</p>
+<p>{{ url_for('auth.confirm', token=token, _external=True) }}</p>
+<p>杰德团队,</p>
+<p><small>注意：回复本邮件将不会被监控.</small></p>

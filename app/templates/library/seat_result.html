@@ -1,0 +1,18 @@
+{% extends "library/seat.html" %}
+
+{% block page_content %}
+{{ super() }}
+    <table class="table table-striped">
+        {% if search_seat %}
+            <tr>
+                {% for key in search_seat.keys() %}
+                <th> {{ key }} </th>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for value in search_seat.values()%}
+                <td> {{ value }} </td>
+                {% endfor %}
+            </tr>
+        {% endif %}
+{% endblock %}
